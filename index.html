@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleBux — Sua Loja Confiável de Robux</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        purple: {
+                            600: '#9333EA',
+                            700: '#7E22CE',
+                            800: '#6B21A8',
+                            900: '#581C87',
+                            neon: '#9333EA'
+                        },
+                        dark: {
+                            900: '#09090b',
+                            800: '#121217',
+                            700: '#1a1a24',
+                            600: '#272738'
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 25px rgba(147, 51, 234, 0.4)',
+                        'neon-lg': '0 0 50px rgba(147, 51, 234, 0.6)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(18, 18, 23, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(147, 51, 234, 0.2);
+        }
+        .glass-card {
+            background: rgba(26, 26, 36, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(147, 51, 234, 0.15);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(147, 51, 234, 0.6);
+            box-shadow: 0 0 30px rgba(147, 51, 234, 0.25);
+            transform: translateY(-5px);
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(147, 51, 234, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(147, 51, 234, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans min-h-screen bg-grid selection:bg-purple-600 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-purple-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-800 to-purple-600 flex items-center justify-center shadow-neon">
+                    <i class="fa-solid fa-cube text-white text-xl"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-white via-purple-300 to-purple-500 bg-clip-text text-transparent">
+                    SIMPLE<span class="text-purple-600">BUX</span>
+                </span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#pacotes" class="hover:text-purple-400 transition">Pacotes</a>
+                <a href="#como-funciona" class="hover:text-purple-400 transition">Como Funciona</a>
+                <a href="#seguranca" class="hover:text-purple-400 transition">Segurança</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="https://discord.com/users/1569033308791378030" target="_blank" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2 rounded-xl glass-card text-purple-400 hover:text-white hover:border-purple-600 text-sm font-semibold transition">
+                    <i class="fa-brands fa-discord text-lg"></i>
+                    <span>Suporte DM</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card text-purple-400 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+                <span class="flex h-2 w-2 rounded-full bg-purple-500 animate-pulse"></span>
+                <span>Entrega Rápida via Gamepass • 100% Seguro</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
+                Garanta seus <span class="bg-gradient-to-r from-purple-400 via-purple-500 to-indigo-400 bg-clip-text text-transparent">Robux</span> com os melhores preços do mercado
+            </h1>
+
+            <p class="text-lg sm:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Pagamento instantâneo via Pix automatizado pela Velani. Sem burocracia, sem senha e com suporte dedicado via Discord.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#pacotes" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-purple-600 hover:bg-purple-700 text-white font-extrabold text-lg shadow-neon hover:shadow-neon-lg transition transform hover:-translate-y-1 text-center">
+                    <i class="fa-solid fa-bolt mr-2"></i> Ver Pacotes Disponíveis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pacotes" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-5xl font-black mb-4">Escolha seu Pacote</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-base">Selecione a quantidade ideal de Robux para turbinar sua conta no Roblox com entrega garantida.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Card 1: 500 Robux -->
+                <div class="glass-card rounded-3xl p-6 flex flex-col justify-between relative group">
+                    <div class="absolute -top-3 right-6 bg-purple-900/80 text-purple-300 text-xs font-bold px-3 py-1 rounded-full border border-purple-600/40">
+                        Popular
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">500 Robux</h3>
+                        <p class="text-xs text-gray-400 mb-6">Ideal para itens e passes básicos.</p>
+
+                        <div class="mb-6">
+                            <span class="text-xs text-gray-500 line-through">R$ 35,00</span>
+                            <div class="flex items-baseline space-x-1">
+                                <span class="text-3xl font-black text-white">R$ 22,00</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Entrega via Gamepass</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Sem senha necessária</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Suporte via Discord</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="iniciarCheckout(2200, '500 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon hover:shadow-neon-lg transition block cursor-pointer">
+                        Comprar Agora
+                    </button>
+                </div>
+
+                <!-- Card 2: 1000 Robux -->
+                <div class="glass-card rounded-3xl p-6 flex flex-col justify-between relative group border-purple-500/40 shadow-neon/30">
+                    <div class="absolute -top-3 right-6 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-neon">
+                        Mais Vendido
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">1.000 Robux</h3>
+                        <p class="text-xs text-gray-400 mb-6">Perfeito para avatares e gamepasses.</p>
+
+                        <div class="mb-6">
+                            <span class="text-xs text-gray-500 line-through">R$ 65,00</span>
+                            <div class="flex items-baseline space-x-1">
+                                <span class="text-3xl font-black text-white">R$ 42,00</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Entrega via Gamepass</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Sem senha necessária</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Suporte via Discord</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="iniciarCheckout(4200, '1.000 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon hover:shadow-neon-lg transition block cursor-pointer">
+                        Comprar Agora
+                    </button>
+                </div>
+
+                <!-- Card 3: 2000 Robux -->
+                <div class="glass-card rounded-3xl p-6 flex flex-col justify-between relative group">
+                    <div class="absolute -top-3 right-6 bg-purple-900/80 text-purple-300 text-xs font-bold px-3 py-1 rounded-full border border-purple-600/40">
+                        Super Desconto
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">2.000 Robux</h3>
+                        <p class="text-xs text-gray-400 mb-6">Excelente custo-benefício.</p>
+
+                        <div class="mb-6">
+                            <span class="text-xs text-gray-500 line-through">R$ 130,00</span>
+                            <div class="flex items-baseline space-x-1">
+                                <span class="text-3xl font-black text-white">R$ 80,00</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Entrega via Gamepass</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Sem senha necessária</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Suporte via Discord</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="iniciarCheckout(8000, '2.000 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon hover:shadow-neon-lg transition block cursor-pointer">
+                        Comprar Agora
+                    </button>
+                </div>
+
+                <!-- Card 4: 5000 Robux -->
+                <div class="glass-card rounded-3xl p-6 flex flex-col justify-between relative group">
+                    <div class="absolute -top-3 right-6 bg-purple-900/80 text-purple-300 text-xs font-bold px-3 py-1 rounded-full border border-purple-600/40">
+                        VIP / Pro
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">5.000 Robux</h3>
+                        <p class="text-xs text-gray-400 mb-6">Para quem quer economizar ao máximo.</p>
+
+                        <div class="mb-6">
+                            <span class="text-xs text-gray-500 line-through">R$ 320,00</span>
+                            <div class="flex items-baseline space-x-1">
+                                <span class="text-3xl font-black text-white">R$ 195,00</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Entrega via Gamepass</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Sem senha necessária</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2"></i> Suporte via Discord</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="iniciarCheckout(19500, '5.000 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon hover:shadow-neon-lg transition block cursor-pointer">
+                        Comprar Agora
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-purple-900/30 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-800 to-purple-600 flex items-center justify-center shadow-neon">
+                        <i class="fa-solid fa-cube text-white text-sm"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
+                        SIMPLEBUX
+                    </span>
+                </div>
+
+                <div class="flex items-center space-x-6 text-sm text-gray-400">
+                    <a href="https://discord.com/users/1569033308791378030" target="_blank" class="hover:text-purple-400 transition flex items-center space-x-2">
+                        <i class="fa-brands fa-discord text-lg text-purple-400"></i>
+                        <span>Suporte Discord</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>© 2026 SimpleBux. Todos os direitos reservados. CNPJ: 36.527.977/0001-09</p>
+                <p class="mt-4 md:mt-0">Não somos afiliados à Roblox Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de Checkout Nativo (Modal Pix) -->
+    <script>
+    async function iniciarCheckout(precoEmCentavos, nomeProduto, event) {
+        const eventBtn = event.currentTarget;
+        const textoAntigo = eventBtn.innerText;
+        
+        try {
+            eventBtn.innerText = "A gerar Pix...";
+            eventBtn.disabled = true;
+
+            const resposta = await fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    amount: precoEmCentavos,
+                    customer: {
+                        name: "Cliente SimpleBux",
+                        email: "cliente@simplebux.store",
+                        document: { type: "cpf", number: "00000000000" }
+                    },
+                    items: [{ title: nomeProduto, unitPrice: precoEmCentavos, quantity: 1 }]
+                })
+            });
+
+            const dados = await resposta.json();
+            eventBtn.innerText = textoAntigo;
+            eventBtn.disabled = false;
+
+            if (dados.pix && dados.pix.copyPaste) {
+                abrirModalPix(dados.pix.copyPaste, dados.pix.qrCodeBase64);
+            } else {
+                alert("Erro ao gerar Pix. Verifique os dados.");
+            }
+        } catch (erro) {
+            console.error(erro);
+            alert("Erro de ligação com o servidor.");
+            eventBtn.disabled = false;
+            eventBtn.innerText = textoAntigo;
+        }
+    }
+
+    function abrirModalPix(copiaECola, qrCode) {
+        const modalAntiga = document.getElementById('modal-pix-nativo');
+        if (modalAntiga) modalAntiga.remove();
+
+        const modalHtml = `
+            <div id="modal-pix-nativo" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+                <div style="background: #0B0716; border: 1px solid #9333EA; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; color: #fff; text-align: center; font-family: 'Inter', sans-serif;">
+                    <h3 style="margin-bottom: 15px; color: #9333EA; font-size: 20px; font-weight: bold;">Pagar com PIX</h3>
+                    ${qrCode ? `<img src="data:image/png;base64,${qrCode}" style="width: 180px; height: 180px; margin: 0 auto 15px auto; border-radius: 8px;" />` : ''}
+                    <p style="font-size: 14px; margin-bottom: 8px; color: #ccc; text-align: left;">Pix Copia e Cola:</p>
+                    <textarea readonly style="width: 100%; height: 70px; background: #1a102f; color: #fff; border: 1px solid #332255; padding: 8px; border-radius: 6px; font-size: 11px; margin-bottom: 15px; resize: none;">${copiaECola}</textarea>
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="navigator.clipboard.writeText('${copiaECola}'); alert('Código Pix copiado com sucesso!');" style="flex: 1; background: #9333EA; color: #fff; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer;">Copiar Código</button>
+                        <button onclick="document.getElementById('modal-pix-nativo').remove();" style="background: #333; color: #fff; border: none; padding: 10px; border-radius: 6px; cursor: pointer;">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+    }
+    </script>
+</body>
+</html>
