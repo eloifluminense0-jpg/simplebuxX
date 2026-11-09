@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimpleBux — Sua Loja Confiável de Robux</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -48,7 +47,7 @@
                 <a href="#como-funciona" class="hover:text-purple-400 transition">Como Funciona</a>
                 <a href="#faq" class="hover:text-purple-400 transition">FAQ</a>
             </nav>
-            <a href="https://discord.com/users/1569033308791378030" target="_blank" class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl glass-card text-purple-400 hover:text-white hover:border-purple-600 text-sm font-semibold transition">
+            <a href="https://discord.com" target="_blank" class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl glass-card text-purple-400 hover:text-white hover:border-purple-600 text-sm font-semibold transition">
                 <i class="fa-brands fa-discord text-lg"></i>
                 <span>Suporte DM</span>
             </a>
@@ -74,64 +73,44 @@
             <p class="text-gray-400 text-sm">Selecione a quantidade ideal de Robux para a sua conta.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- 500 Robux -->
             <div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
-                        <i class="fa-solid fa-gem"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4"><i class="fa-solid fa-gem"></i></div>
                     <h3 class="text-xl font-bold mb-1">500 Robux</h3>
                     <p class="text-xs text-gray-400 mb-4">Ideal para itens e passes básicos.</p>
                     <div class="text-3xl font-black text-white mb-6">R$ 22,00</div>
                 </div>
-                <button onclick="iniciarCheckout(2200, '500 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon transition cursor-pointer">
-                    Comprar Agora
-                </button>
+                <button onclick="iniciarCheckout(2200, '500 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon transition cursor-pointer">Comprar Agora</button>
             </div>
 
-            <!-- 1000 Robux -->
             <div class="glass-card rounded-3xl p-6 flex flex-col justify-between border-purple-500/40 shadow-neon/30">
                 <div>
-                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
-                        <i class="fa-solid fa-gem"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4"><i class="fa-solid fa-gem"></i></div>
                     <h3 class="text-xl font-bold mb-1">1.000 Robux</h3>
                     <p class="text-xs text-gray-400 mb-4">Perfeito para avatares e gamepasses.</p>
                     <div class="text-3xl font-black text-white mb-6">R$ 42,00</div>
                 </div>
-                <button onclick="iniciarCheckout(4200, '1.000 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon transition cursor-pointer">
-                    Comprar Agora
-                </button>
+                <button onclick="iniciarCheckout(4200, '1.000 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon transition cursor-pointer">Comprar Agora</button>
             </div>
 
-            <!-- 2000 Robux -->
             <div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
-                        <i class="fa-solid fa-gem"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4"><i class="fa-solid fa-gem"></i></div>
                     <h3 class="text-xl font-bold mb-1">2.000 Robux</h3>
                     <p class="text-xs text-gray-400 mb-4">Excelente custo-benefício.</p>
                     <div class="text-3xl font-black text-white mb-6">R$ 80,00</div>
                 </div>
-                <button onclick="iniciarCheckout(8000, '2.000 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon transition cursor-pointer">
-                    Comprar Agora
-                </button>
+                <button onclick="iniciarCheckout(8000, '2.000 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon transition cursor-pointer">Comprar Agora</button>
             </div>
 
-            <!-- 5000 Robux -->
             <div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
-                        <i class="fa-solid fa-gem"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4"><i class="fa-solid fa-gem"></i></div>
                     <h3 class="text-xl font-bold mb-1">5.000 Robux</h3>
                     <p class="text-xs text-gray-400 mb-4">Para quem quer economizar ao máximo.</p>
                     <div class="text-3xl font-black text-white mb-6">R$ 195,00</div>
                 </div>
-                <button onclick="iniciarCheckout(19500, '5.000 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon transition cursor-pointer">
-                    Comprar Agora
-                </button>
+                <button onclick="iniciarCheckout(19500, '5.000 Robux — SimpleBux', event)" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-center shadow-neon transition cursor-pointer">Comprar Agora</button>
             </div>
         </div>
     </section>
@@ -154,4 +133,110 @@
                 <div class="flex flex-col items-center text-center">
                     <div class="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center text-purple-400 text-lg font-bold mb-4">3</div>
                     <h3 class="font-bold text-white mb-2">Recebimento</h3>
-                    <p class="text-gray-400">Os Rob
+                    <p class="text-gray-400">Os Robux entram diretamente na tua conta de forma totalmente segura e sem precisar da tua senha.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-black mb-3">Perguntas Frequentes</h2>
+            <p class="text-gray-400 text-sm">Tire suas dúvidas antes de realizar sua compra.</p>
+        </div>
+        <div class="space-y-4">
+            <div class="glass-card rounded-2xl p-6">
+                <h3 class="font-bold text-lg mb-2 text-purple-300">Preciso passar a senha da minha conta?</h3>
+                <p class="text-gray-400 text-sm">Não! A entrega é feita através de Gamepass. Você cria um passe pelo valor do pacote e nós compramos.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+                <h3 class="font-bold text-lg mb-2 text-purple-300">Quanto tempo demoram para cair os Robux?</h3>
+                <p class="text-gray-400 text-sm">Após a confirmação do pagamento e criação do Gamepass, o prazo padrão da Roblox é de até 5 dias úteis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-purple-900/30 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-800 to-purple-600 flex items-center justify-center shadow-neon"><i class="fa-solid fa-cube text-white text-sm"></i></div>
+                <span class="text-xl font-extrabold tracking-wider text-white">SIMPLEBUX</span>
+            </div>
+            <div class="text-xs text-gray-500 text-center md:text-right">
+                <p>© 2026 SimpleBux. Todos os direitos reservados. CNPJ: 36.527.977/0001-09</p>
+                <p class="mt-1">Não somos afiliados à Roblox Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de Checkout Interno Corrigido -->
+    <script>
+    async function iniciarCheckout(precoEmCentavos, nomeProduto, event) {
+        const btn = event.currentTarget;
+        const textoOriginal = btn.innerText;
+        
+        try {
+            btn.innerText = "A gerar Pix...";
+            btn.disabled = true;
+
+            const res = await fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    amount: precoEmCentavos,
+                    customer: {
+                        name: "Cliente SimpleBux",
+                        email: "cliente@simplebux.store",
+                        document: { type: "cpf", number: "00000000000" }
+                    },
+                    items: [{ title: nomeProduto, unitPrice: precoEmCentavos, quantity: 1 }]
+                })
+            });
+
+            const data = await res.json();
+            btn.innerText = textoOriginal;
+            btn.disabled = false;
+
+            // Procura a string do Pix Copia e Cola em diferentes formatos possíveis da API
+            const copiaECola = data.pix?.copyPaste || data.pixCopyPaste || data.qrcode || data.copyPaste;
+            const qrCodeBase64 = data.pix?.qrCodeBase64 || data.qrCodeBase64;
+
+            if (copiaECola) {
+                abrirModalPix(copiaECola, qrCodeBase64);
+            } else {
+                console.error("Resposta da API:", data);
+                alert("Erro: A API não retornou o código Pix.");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Erro de ligação com o servidor.");
+            btn.disabled = false;
+            btn.innerText = textoOriginal;
+        }
+    }
+
+    function abrirModalPix(copiaECola, qrCode) {
+        const antiga = document.getElementById('modal-pix-nativo');
+        if (antiga) antiga.remove();
+
+        const html = `
+            <div id="modal-pix-nativo" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); display: flex; justify-content: center; align-items: center; z-index: 999999;">
+                <div style="background: #121217; border: 2px solid #9333EA; padding: 25px; border-radius: 16px; max-width: 400px; width: 90%; color: #fff; text-align: center; font-family: 'Inter', sans-serif; box-shadow: 0 0 40px rgba(147, 51, 234, 0.4);">
+                    <h3 style="margin-bottom: 15px; color: #9333EA; font-size: 20px; font-weight: 800;">Pagamento via PIX</h3>
+                    ${qrCode ? `<img src="data:image/png;base64,${qrCode}" style="width: 170px; height: 170px; margin: 0 auto 15px auto; border-radius: 8px; background: #fff; padding: 5px;" />` : ''}
+                    <p style="font-size: 12px; margin-bottom: 5px; color: #ccc; text-align: left;">Pix Copia e Cola:</p>
+                    <textarea readonly style="width: 100%; height: 65px; background: #1a1a24; color: #fff; border: 1px solid #9333EA; padding: 6px; border-radius: 6px; font-size: 11px; margin-bottom: 12px; resize: none;">${copiaECola}</textarea>
+                    <div style="display: flex; gap: 8px;">
+                        <button onclick="navigator.clipboard.writeText('${copiaECola}'); alert('Pix copiado com sucesso!');" style="flex: 1; background: #9333EA; color: #fff; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer;">Copiar Código</button>
+                        <button onclick="document.getElementById('modal-pix-nativo').remove();" style="background: #272738; color: #fff; border: none; padding: 10px; border-radius: 6px; cursor: pointer;">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', html);
+    }
+    </script>
+</body>
+</html>
