@@ -46,7 +46,7 @@
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#pacotes" class="hover:text-purple-400 transition">Pacotes</a>
                 <a href="#como-funciona" class="hover:text-purple-400 transition">Como Funciona</a>
-                <a href="#seguranca" class="hover:text-purple-400 transition">Segurança</a>
+                <a href="#faq" class="hover:text-purple-400 transition">FAQ</a>
             </nav>
             <a href="https://discord.com/users/1569033308791378030" target="_blank" class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl glass-card text-purple-400 hover:text-white hover:border-purple-600 text-sm font-semibold transition">
                 <i class="fa-brands fa-discord text-lg"></i>
@@ -136,7 +136,7 @@
         </div>
     </section>
 
-    <!-- Como Funciona / Segurança -->
+    <!-- Como Funciona -->
     <section id="como-funciona" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="glass-card rounded-3xl p-8 sm:p-12 border border-purple-900/30">
             <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-center">Como é feita a entrega?</h2>
@@ -156,6 +156,28 @@
                     <h3 class="font-bold text-white mb-2">Recebimento</h3>
                     <p class="text-gray-400">Os Robux entram diretamente na tua conta de forma totalmente segura e sem precisar da tua senha.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-black mb-3">Perguntas Frequentes</h2>
+            <p class="text-gray-400 text-sm">Tire suas dúvidas antes de realizar sua compra.</p>
+        </div>
+        <div class="space-y-4">
+            <div class="glass-card rounded-2xl p-6">
+                <h3 class="font-bold text-lg mb-2 text-purple-300">Preciso passar a senha da minha conta?</h3>
+                <p class="text-gray-400 text-sm">Não! A entrega é feita através de Gamepass (Game Pass). Você cria um passe pelo valor do pacote no seu jogo e nós compramos, garantindo total segurança para a sua conta.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+                <h3 class="font-bold text-lg mb-2 text-purple-300">Quanto tempo demoram para cair os Robux?</h3>
+                <p class="text-gray-400 text-sm">Após a confirmação do pagamento via Pix e a criação do Gamepass, os Robux costumam cair na sua conta em até 5 dias úteis (prazo padrão estabelecido pela própria Roblox).</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+                <h3 class="font-bold text-lg mb-2 text-purple-300">O pagamento via Pix é seguro?</h3>
+                <p class="text-gray-400 text-sm">Sim, totalmente automatizado e processado de forma segura através da Velani Pagamentos.</p>
             </div>
         </div>
     </section>
@@ -197,53 +219,3 @@
             const resposta = await fetch('/api/checkout', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    amount: precoEmCentavos,
-                    customer: {
-                        name: "Cliente SimpleBux",
-                        email: "cliente@simplebux.store",
-                        document: { type: "cpf", number: "00000000000" }
-                    },
-                    items: [{ title: nomeProduto, unitPrice: precoEmCentavos, quantity: 1 }]
-                })
-            });
-
-            const dados = await resposta.json();
-            eventBtn.innerText = textoAntigo;
-            eventBtn.disabled = false;
-
-            if (dados.pix && dados.pix.copyPaste) {
-                abrirModalPix(dados.pix.copyPaste, dados.pix.qrCodeBase64);
-            } else {
-                alert("Erro ao gerar Pix. Verifique os dados.");
-            }
-        } catch (erro) {
-            console.error(erro);
-            alert("Erro de ligação com o servidor.");
-            eventBtn.disabled = false;
-            eventBtn.innerText = textoAntigo;
-        }
-    }
-
-    function abrirModalPix(copiaECola, qrCode) {
-        const modalAntiga = document.getElementById('modal-pix-nativo');
-        if (modalAntiga) modalAntiga.remove();
-
-        const modalHtml = `
-            <div id="modal-pix-nativo" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 999999;">
-                <div style="background: #121217; border: 2px solid #9333EA; padding: 28px; border-radius: 16px; max-width: 420px; width: 90%; color: #fff; text-align: center; font-family: 'Inter', sans-serif;">
-                    <h3 style="margin-bottom: 15px; color: #9333EA; font-size: 22px; font-weight: 800;">Pagar com PIX</h3>
-                    ${qrCode ? `<img src="data:image/png;base64,${qrCode}" style="width: 190px; height: 190px; margin: 0 auto 15px auto; border-radius: 8px; background: #fff; padding: 5px;" />` : ''}
-                    <textarea readonly style="width: 100%; height: 75px; background: #1a1a24; color: #fff; border: 1px solid #9333EA; padding: 8px; border-radius: 6px; font-size: 11px; margin-bottom: 15px; resize: none;">${copiaECola}</textarea>
-                    <div style="display: flex; gap: 10px;">
-                        <button onclick="navigator.clipboard.writeText('${copiaECola}'); alert('Código Pix copiado com sucesso!');" style="flex: 1; background: #9333EA; color: #fff; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">Copiar Código</button>
-                        <button onclick="document.getElementById('modal-pix-nativo').remove();" style="background: #272738; color: #fff; border: none; padding: 12px; border-radius: 8px; cursor: pointer;">Fechar</button>
-                    </div>
-                </div>
-            </div>
-        `;
-        document.body.insertAdjacentHTML('beforeend', modalHtml);
-    }
-    </script>
-</body>
-</html>
