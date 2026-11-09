@@ -31,7 +31,16 @@ export default async function handler(req, res) {
       return res.status(respostaVelani.status).json({ error: dados.message || 'Erro ao comunicar com a Velani' });
     }
 
-    return res.status(200).json(dados);
+    // Normaliza os dados para garantir que o frontend receba o Pix Copia e Cola
+    const pixData = dados.pix || dados.payment?.pix || {};
+    
+    return res.status(200).json({
+      success: true,
+      pix: {
+        copyPaste: pixData.copyPaste || pixData.qrcode || dados.copyPaste || dados.qrcode,
+        qrCodeBase64: pixData.qrCodeBase64 || dados.qrCodeBase64
+      }
+    });
   } catch (erro) {
     console.error('Erro no checkout:', erro);
     return res.status(500).json({ error: 'Erro interno ao processar o pagamento.' });
