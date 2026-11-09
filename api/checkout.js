@@ -1,29 +1,39 @@
 export default async function handler(req, res) {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Método não permitido' });
-    }
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Método não permitido' });
+  }
 
+  try {
     const { amount, customer, items } = req.body;
+    const secretKey = process.env.VELANI_SECRET_KEY;
 
-    try {
-        const response = await fetch('https://api.velanipagamentos.com.br/api/v1/api-gateway/v1/transactions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': process.env.VELANI_SECRET_KEY
-            },
-            body: JSON.stringify({
-                paymentMethod: 'pix',
-                amount,
-                customer,
-                items
-            })
-        });
-
-        const data = await response.json();
-        return res.status(200).json(data);
-    } catch (error) {
-        console.error('Erro na API da Velani:', error);
-        return res.status(500).json({ error: 'Erro ao processar pagamento' });
+    if (!secretKey) {
+      return res.status(500).json({ error: 'Chave secreta Velani não configurada no servidor.' });
     }
+
+    const respostaVelani = await fetch('https://api.velanipagamentos.com.br/v1/charges', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${secretKey}`
+      },
+      body: JSON.stringify({
+        amount,
+        paymentMethod: 'pix',
+        customer,
+        items
+      })
+    });
+
+    const dados = await respostaVelani.json();
+
+    if (!respostaVelani.ok) {
+      return res.status(respostaVelani.status).json({ error: dados.message || 'Erro ao comunicar com a Velani' });
+    }
+
+    return res.status(200).json(dados);
+  } catch (erro) {
+    console.error('Erro no checkout:', erro);
+    return res.status(500).json({ error: 'Erro interno ao processar o pagamento.' });
+  }
 }
