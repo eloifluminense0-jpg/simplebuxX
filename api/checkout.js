@@ -21,18 +21,9 @@ export default async function handler(req, res) {
         });
 
         const data = await response.json();
-
-        // Se a Velani recusar, devolvemos o erro exato que veio da API deles
-        if (!response.ok) {
-            return res.status(response.status).json({ 
-                error: 'Erro retornado pela Velani', 
-                detalhes: data 
-            });
-        }
-
         return res.status(200).json(data);
     } catch (error) {
         console.error('Erro na API da Velani:', error);
-        return res.status(500).json({ error: error.message || 'Erro ao processar pagamento' });
+        return res.status(500).json({ error: 'Erro ao processar pagamento' });
     }
 }
