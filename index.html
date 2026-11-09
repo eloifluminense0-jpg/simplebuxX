@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimpleBux — Sua Loja Confiável de Robux</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -200,14 +199,11 @@
             btn.innerText = textoOriginal;
             btn.disabled = false;
 
-            const copiaECola = data.pix?.copyPaste || data.pixCopyPaste || data.qrcode || data.copyPaste;
-            const qrCodeBase64 = data.pix?.qrCodeBase64 || data.qrCodeBase64;
-
-            if (copiaECola) {
-                abrirModalPix(copiaECola, qrCodeBase64);
+            if (data.pix && data.pix.copyPaste) {
+                abrirModalPix(data.pix.copyPaste, data.pix.qrCodeBase64);
             } else {
                 console.error("Resposta da API:", data);
-                alert("Erro: A API não retornou o código Pix.");
+                alert("Erro: A API não retornou o Pix Copia e Cola.");
             }
         } catch (err) {
             console.error(err);
